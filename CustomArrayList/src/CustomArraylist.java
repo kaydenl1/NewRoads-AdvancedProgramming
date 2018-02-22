@@ -42,7 +42,7 @@ public class CustomArraylist {
 		//else, double the size of the array, and then add the element
 		
 	}
-	public void subtract(int x)
+	public void remove(int x)
 	{
 		if(size < array.length -1)
 		{
@@ -108,10 +108,8 @@ public class CustomArraylist {
 		return this.array[index];
 	}
 	
-	public void remove(int x) {
-		
-		
-		
+	public String toString() {
+		return array.toString();
 	}
-	
+
 }
