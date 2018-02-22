@@ -25,6 +25,23 @@ public class CustomArraylist {
 		//else, double the size of the array, and then add the element
 		
 	}
+	public void addLast(int x)
+	{
+		if(size > array.length -1)
+		{
+			doubleSize();
+			array[size] = x;
+			size++;
+		}
+		else
+		{
+			array[size] = x;
+			size++;
+		}
+		//if there is room to add this element, add it
+		//else, double the size of the array, and then add the element
+		
+	}
 	public void subtract(int x)
 	{
 		if(size < array.length -1)
@@ -42,19 +59,34 @@ public class CustomArraylist {
 		//else, double the size of the array, and then add the element
 	}
 	
-	public void addAt(int x, int y)
+	public void addAt(int x, int pos)
 	{
-		if(size > array.length -1)
-		{
+		if(size > array.length - 1) {
 			doubleSize();
-			array[size] = x;
+			for (int i = array.length; i < pos; i--) {
+				array[i+1] = array[i];
+			}
+			array[pos] = x;
 			size++;
 		}
 		else
 		{
-			array[size] = x;
+			for (int i = array.length; i < pos; i--) {
+				array[i+1] = array[i];
+			}
+			array[pos] = x;
 			size++;
 		}
+
+		//if there is room to add this element, add it
+		//else, double the size of the array, and then add the element
+		
+	}
+	
+	public void addFirst(int x)
+	{
+		addAt(x, 0);
+
 		//if there is room to add this element, add it
 		//else, double the size of the array, and then add the element
 		
